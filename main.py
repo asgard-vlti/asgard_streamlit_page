@@ -23,8 +23,8 @@ with cols[0]:
 
     st.subheader("🔹 BALDR")
     st.markdown("""
-    - Works in the **H band**  
-    - Optimizes the **Strehl ratio**  
+    - Works in the **J or H band**  
+    - Zernike Wavefront Sensing to Optimize the **Strehl ratio**  
     - Enhances wavefront correction for high-quality imaging
     """)
 
