@@ -1,5 +1,7 @@
 import streamlit as st
 import requests
+from pathlib import Path
+from PIL import Image
 st.set_page_config(page_title="Asgard Instrument Suite", layout="wide")
 
 # Title and Introduction
@@ -8,6 +10,15 @@ st.markdown("""
 ESO's **Very Large Telescope Interferometer (VLTI)** has a history of record-breaking discoveries in astrophysics and instrumentation.  
 The **Asgard** project is the next leap forward: an integrated instrumental suite pushing the limits of infrared interferometry.
 """)
+
+# Path to your local figures
+fig_dir = Path("figs")
+image_files = sorted(fig_dir.glob("*.png"))  # All PNGs in /figs/
+
+for image_path in image_files:
+    #st.subheader(image_path.stem.replace("_", " ").title())  # Optional: make title from filename
+    img = Image.open(image_path)
+    st.image(img, use_column_width=True)  # or width=600 for fixed size
 
 # Instrument Overview
 st.header("🧰 The Four Asgard Instruments")
